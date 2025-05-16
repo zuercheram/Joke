@@ -1,0 +1,11 @@
+﻿@page "/"
+
+<PageTitle>Joke</PageTitle>
+
+<RadzenCard Variant="Variant.Filled" class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center" Gap="1rem" class="rz-p-4">
+        <RadzenText TextStyle="TextStyle.Body1" class="rz-display-flex rz-mt-2 rz-my-0">
+            @_joke?.Value
+        </RadzenText>
+    </RadzenStack>
+</RadzenCard>

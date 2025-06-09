@@ -4,8 +4,15 @@
 
 <RadzenCard Variant="Variant.Filled" class="rz-my-12 rz-mx-auto joke-card">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center" Gap="1rem" class="rz-p-4">
-        <RadzenText TextStyle="TextStyle.Body1" class="rz-display-flex rz-mt-2 rz-my-0">
-            @_joke?.Value
-        </RadzenText>
+        @if (_joke is not null) {
+            <RadzenText TextStyle="TextStyle.Body1" class="rz-display-flex rz-mt-2 rz-my-0">
+                @_joke?.Value
+            </RadzenText>
+            <RadzenButton Click=@(args => FavoriteButton_OnClickHandler(_joke.Id)) Icon="favorite" ButtonStyle="ButtonStyle.Secondary" />
+        } else {
+            <RadzenText TextStyle="TextStyle.Body1" class="rz-display-flex rz-mt-2 rz-my-0">
+                Loading...
+            </RadzenText>
+        }
     </RadzenStack>
 </RadzenCard>

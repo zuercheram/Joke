@@ -18,7 +18,7 @@ public class LocalJokeStore
     public async Task<JokeDto?> FetchLocalJokeAsync()
     {
         await DeleteAllAsync();
-        var newJoke = await _httpClient.GetFromJsonAsync<JokeDto>("api/joke");
+        var newJoke = await _httpClient.GetFromJsonAsync<JokeDto>("api/joke/random");
         if (newJoke == null)
         {
             var jokes = await GetAllAsync<JokeDto[]>("latestjoke");

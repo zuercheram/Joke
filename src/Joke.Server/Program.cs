@@ -1,5 +1,4 @@
 using Joke.Server.Extensions;
-using Joke.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +10,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddHttpClient();
 builder.Services.AddServices();
+builder.Services.AddRepositories();
 
 // Add Yarp Reverse Proxy for Local Development
 if (builder.Environment.IsDevelopment())

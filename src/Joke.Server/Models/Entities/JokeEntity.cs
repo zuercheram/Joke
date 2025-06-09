@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using Joke.Shared.Dtos;
+using System.Text.Json.Serialization;
 
 namespace Joke.Server.Models.Entities;
 
@@ -17,5 +18,6 @@ public class JokeEntity
     public DateTime CreatedAt { get; set; }
     [JsonPropertyName("updated_at")]
     public DateTime UpdatedAt { get; set; }
-    public List<CategorieEntity> Categories { get; set; } = [];
+
+    public static JokeEntity ToEntity(JokeDto dto) => new() { Id = dto.Id, SourceId = dto.SourceId, Value = dto.Value, Url = dto.Url, IconUrl = dto.IconUrl, CreatedAt = dto.CreatedAt, UpdatedAt = dto.UpdatedAt };
 }

@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<PageTitle>Modern It Academy - Random Joke App</PageTitle>
+
+<h1>Radom Joke</h1>
+
+@if (_joke is not null)
+{
+    <p>@_joke.Value</p>
+
+    <button @onclick="RefreshRandomJokeAsync">Next Joke...</button> <button @onclick="SaveJokeAsync">Save Joke</button>
+}
+else
+{
+    <p>Joke is Loading...</p>
+}
+
+@if (_jokeList is not null)
+{
+    <h1>Saved Jokes</h1>
+    <ul>
+        @foreach (var joke in _jokeList)
+        {
+            <li>@joke.Value</li>
+        }
+    </ul>
+}

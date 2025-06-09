@@ -1,4 +1,5 @@
-﻿using Joke.Server.Services;
+﻿using Joke.Server.Repositories;
+using Joke.Server.Services;
 
 namespace Joke.Server.Extensions
 {
@@ -7,6 +8,12 @@ namespace Joke.Server.Extensions
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddTransient<JokeService>();
+            return services;
+        }
+
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddTransient<JokeRepository>();
             return services;
         }
     }

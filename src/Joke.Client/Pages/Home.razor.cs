@@ -15,4 +15,9 @@ public partial class Home : ComponentBase
     {
         _joke = await _jokeStore.FetchLocalJokeAsync();
     }
+
+    protected void FavoriteButton_OnClickHandler(int jokeId)
+    {
+        
+    }
 }
